@@ -1,0 +1,15 @@
+[package]
+name = "reboot-to-linux"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+winsafe = { version = "0.0.26", features = ["gui"] }
+
+[build-dependencies]
+winres = { version = "0.1.12" }
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+strip = "symbols"
