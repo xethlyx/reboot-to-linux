@@ -194,7 +194,7 @@ fn main_window() -> Result<(), String> {
             match modify_boot_sequence {
                 Ok(o) if o.status.success() => {
                     Command::new("shutdown")
-                        .args(&["/r", "/t", "0"])
+                        .args(&["/r", "/f", "/t", "0"])
                         .status().unwrap();
                 }
                 Ok(o) => {
